@@ -1,0 +1,12 @@
+@use "/src/assets/styles/partials/globals" as *;
+@use "/src/assets/styles/partials/typography" as *;
+@use "/src/assets/styles/partials/variables" as *;
+@use "/src/assets/styles/partials/mixins" as *;
+
+
+body {
+  min-height: 100vh;
+  //todo: background: var(--background);
+  background-color: $darkNavy;
+
+}

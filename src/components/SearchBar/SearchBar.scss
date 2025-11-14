@@ -1,0 +1,21 @@
+@use "../../assets/styles/partials/variables" as *;
+
+.searchBar {
+  // width: 100vw;
+  padding: 1.5rem;
+  &__input {
+    padding: 1.125rem 2.8125rem;
+    width: 100%;
+    margin: 1rem 1.5rem;
+  }
+
+  &__submit {
+    background-color: $lightBlue;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 0.875rem;
+    padding: 0.8rem 1.125rem;
+    border-radius: 0.625rem;
+  }
+}
