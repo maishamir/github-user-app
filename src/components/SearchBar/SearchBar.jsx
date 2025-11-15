@@ -1,13 +1,25 @@
-import React from 'react'
-import "./SearchBar.scss"
+import React from "react";
+import "./SearchBar.scss";
+import searchIcon from "../../assets/icons/icon-search.svg";
 
 function SearchBar() {
   return (
-    <form className='searchBar'>
-      <input type="text" name="" id="" placeholder='Search GitHub username...' className='searchBar__input'/>
-      <button type="submit" className='searchBar__submit'>Search</button>
-    </form>
-  )
+    <section>
+      <form action="" className="searchBar">
+        <img src={searchIcon} alt="" className="searchBar__icon" />
+        <input
+          type="text"
+          name=""
+          id=""
+          className="searchBar__input"
+          placeholder="Search GitHub username..."
+        />
+        <button type="submit" className="searchBar__submit">
+          Search
+        </button>
+      </form>
+    </section>
+  );
 }
 
-export default SearchBar
+export default SearchBar;
