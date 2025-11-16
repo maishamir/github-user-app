@@ -24,6 +24,9 @@
     &::placeholder {
       // todo: color: var(--placeholder);
       color: white;
+      font-size: 0.75rem;
+      font-weight: normal;
+      letter-spacing: 0;
     }
   }
 
