@@ -6,7 +6,7 @@ import "./Header.scss"
 function Header() {
   return (
     <header className="header">
-      <p className="header__logo">devfinder</p>
+      <h1 className="header__logo">devfinder</h1>
       <div className="header__toggle">
         <p className="toggle__label">LIGHT</p>
         <img src={sunIcon} alt="" className="toggle__icon" />

@@ -9,7 +9,6 @@ function App() {
       <Header />
       <SearchBar />
       <UserCard />
-      devfinder Light Dark Search Joined Repos Followers Following
     </main>
   );
 }
