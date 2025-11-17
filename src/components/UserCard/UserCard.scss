@@ -30,8 +30,6 @@
       font-size: 1rem;
       font-weight: bold;
       line-height: normal;
-
-      
     }
 
     &__username {
@@ -110,12 +108,17 @@
     }
 
     &.unavailable {
-        opacity: 0.5;
-      }
+      opacity: 0.5;
+    }
 
     a {
       color: white;
       text-decoration: none;
+      &:hover {
+        text-decoration-line: underline;
+        text-underline-offset: 3px;
+        text-decoration-style: wavy;
+      }
     }
   }
 }
