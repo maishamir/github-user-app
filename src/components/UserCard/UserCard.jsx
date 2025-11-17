@@ -1,4 +1,3 @@
-import React from "react";
 import locIcon from "../../assets/icons/icon-location.svg";
 import websiteIcon from "../../assets/icons/icon-website.svg";
 import twitterIcon from "../../assets/icons/icon-twitter.svg";
@@ -6,54 +5,83 @@ import companyIcon from "../../assets/icons/icon-company.svg";
 import defaultUser from "../../assets/icons/defaultUser.png";
 import "./UserCard.scss";
 
-function UserCard() {
+function UserCard({ userInfo }) {
+  if (!userInfo) return <div>Loading...</div>;
+
+  const joinDate = new Date(userInfo.created_at);
+  console.log(joinDate);
+
+  const options = {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  };
+
+  const joined = joinDate.toLocaleDateString("en-GB", options);
+  console.log(joined);
+
   return (
     <section className="userCard">
       <div className="userInfo">
-        <img src={defaultUser} alt=""/>
+        <img src={userInfo.avatar_url} alt="" />
         <div className="user">
-          <h1 className="user__name">The Octocat</h1>
-          <h3 className="user__username">@octocat</h3>
-          <p className="user__joinDate">Joined 25 Jan 2011</p>
+          <h1 className="user__name">{userInfo.name}</h1>
+          <h3 className="user__username">
+            <a href={userInfo.html_url} target="_blank">
+              @{userInfo.login}
+            </a>
+          </h3>
+          <p className="user__joinDate">Joined {joined}</p>
         </div>
       </div>
 
       <p className="userDescription">
-        Lorem ipsun dolor sit amet, consectetuer adipscing elit. Donec odio.
-        Quisque volutpat mattis eros.
+        {userInfo.bio ? (
+          <p> {userInfo.bio}</p>
+        ) : (
+          <p>
+            <em>This user doesn't have a bio</em>
+          </p>
+        )}
       </p>
 
       <div className="userStats">
         <div className="stat">
           <p className="stat__label">Repos</p>
-          <p className="stat__info">8</p>
+          <p className="stat__info">{userInfo.public_repos}</p>
         </div>
         <div className="stat">
           <p className="stat__label">Followers</p>
-          <p className="stat__info">3938</p>
+          <p className="stat__info">{userInfo.followers}</p>
         </div>
         <div className="stat">
           <p className="stat__label">Following</p>
-          <p className="stat__info">9</p>
+          <p className="stat__info">{userInfo.following}</p>
         </div>
       </div>
 
       <ul className="userSocials">
         <li>
           <img src={locIcon} alt="" />
-          <p>San Francisco</p>
+          <p>{userInfo.location ? userInfo.location : "Not Available"}</p>
         </li>
         <li>
           <img src={websiteIcon} alt="" />
-          <a href="">https://github.blog</a>
+          <a href={userInfo?.blog} target="_blank">
+            {userInfo.blog ? userInfo.blog : "Not Available"}
+          </a>
         </li>
         <li className="unavailable">
           <img src={twitterIcon} alt="" />
-          <a href="" >Not available</a>
+          <a href={userInfo?.twitter_username} target="_blank">
+            {userInfo.twitter_username
+              ? userInfo.twitter_username
+              : "Not Available"}
+          </a>
         </li>
         <li>
           <img src={companyIcon} alt="" />
-          <p>@github</p>
+          <p>{userInfo.company ? userInfo.company : "Not Available"}</p>
         </li>
       </ul>
     </section>
@@ -61,49 +89,3 @@ function UserCard() {
 }
 
 export default UserCard;
-
-{
-  /* <div className="userInfo">
-        [user img] [user's name]
-        @[username]
-        [date joined]
-      </div>
-
-      <p className="userDescription">
-        [description of user]
-      </p>
-
-      <div className="userStats">
-        <div>
-          <p className="label">Repos</p>
-          <p>[# repos]</p>
-        </div>
-        <div>
-          <p className="label">Followers</p>
-          <p>[# followers]</p>
-        </div>
-        <div>
-          <p className="label">Following</p>
-          <p>[# following]</p>
-        </div>
-      </div>
-
-      <ul className="userSocials">
-        <li>
-          <img src={locIcon} alt="" />
-          <p>[location]</p>
-        </li>
-        <li>
-          <img src={websiteIcon} alt="" />
-          <a href="">[website]</a>
-        </li>
-        <li>
-          <img src={twitterIcon} alt="" />
-          <a href="">[twitter]</a>
-        </li>
-        <li>
-          <img src={companyIcon} alt="" />
-          <p>[company]</p>
-        </li>
-      </ul> */
-}

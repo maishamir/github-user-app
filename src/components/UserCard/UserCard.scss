@@ -16,6 +16,7 @@
   img {
     height: 4.375rem;
     width: 4.375rem;
+    border-radius: 50%;
   }
 
   .user {
@@ -29,12 +30,23 @@
       font-size: 1rem;
       font-weight: bold;
       line-height: normal;
+
+      
     }
 
     &__username {
       font-size: 0.8125rem;
       color: $lightBlue;
       margin-bottom: 0.375rem;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+
+        &:visited {
+          color: inherit;
+        }
+      }
     }
 
     &__joinDate {
@@ -91,6 +103,7 @@
     display: flex;
     color: white;
     gap: 1.25rem;
+    font-size: 0.8125rem;
 
     img {
       height: 100%;
@@ -103,9 +116,6 @@
     a {
       color: white;
       text-decoration: none;
-      font-size: 0.8125rem;
-
-      
     }
   }
 }
