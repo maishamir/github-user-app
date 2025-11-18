@@ -1,11 +1,25 @@
-// @use "./assets/styles/partials/globals" as *;
 @use "./assets/styles/partials/variables" as *;
+@use "./assets/styles/partials/mixins" as *;
 
 .app {
-  background: var(--backgroundColor);
-  width: 100vw;
-  height: 100vh;
-  padding: 2rem 1.5rem;
+  @include tablet {
+    max-width: 75%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &Container {
+    background: var(--backgroundColor);
+    // background-color: red;
+    width: 100vw;
+    height: 100vh;
+    padding: 2rem 1.5rem;
+    position: relative;
+
+    @include tablet {
+    }
+  }
 
   &__header-toggle {
     display: flex;

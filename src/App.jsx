@@ -31,14 +31,16 @@ function App() {
   }, [user]);
 
   return (
-    <main className="app" data-theme={isDark ? "dark" : "light"}>
-      <div className="app__header-toggle">
-        <Header />
-        <Toggle handleChange={() => setIsDark(!isDark)} isChecked={isDark} />
-      </div>
-      <SearchBar onSearch={handleSearch} />
-      <UserCard userInfo={userData} />
-    </main>
+    <div className="appContainer">
+      <main className="app" data-theme={isDark ? "dark" : "light"}>
+        <div className="app__header-toggle">
+          <Header />
+          <Toggle handleChange={() => setIsDark(!isDark)} isChecked={isDark} />
+        </div>
+        <SearchBar onSearch={handleSearch} />
+        <UserCard userInfo={userData} />
+      </main>
+    </div>
   );
 }
 
