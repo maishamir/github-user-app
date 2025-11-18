@@ -4,12 +4,15 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import UserCard from "./components/UserCard/UserCard";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Toggle from "./components/Toggle/Toggle";
 
 const BASE = "https://api.github.com";
 
 function App() {
   const [user, setUser] = useState("maishamir");
   const [userData, setUserData] = useState(null);
+
+  const [isDark, setIsDark] = useState(true);
 
   function handleSearch(userName) {
     setUser(userName);
@@ -27,12 +30,12 @@ function App() {
     fetchUser();
   }, [user]);
 
-  // console.log(userData.login)
-
   return (
-    <main className="app" data-theme="dark">
-    {/* <main className="app"> */}
-      <Header />
+    <main className="app" data-theme={isDark ? "dark" : "light"}>
+      <div className="app__header-toggle">
+        <Header />
+        <Toggle handleChange={() => setIsDark(!isDark)} isChecked={isDark} />
+      </div>
       <SearchBar onSearch={handleSearch} />
       <UserCard userInfo={userData} />
     </main>
