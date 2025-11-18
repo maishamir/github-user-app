@@ -5,10 +5,9 @@ import "./Toggle.scss";
 
 function Toggle({ handleChange, isChecked }) {
   let label = isChecked ? "LIGHT" : "DARK";
-  
+
   return (
     <div className="toggle">
-      <p className="toggle__label">{label}</p>
       <div className="toggle__toggle">
         <input
           type="checkbox"
@@ -17,11 +16,12 @@ function Toggle({ handleChange, isChecked }) {
           onChange={handleChange}
           checked={isChecked}
         />
-        <label htmlFor="check">
+        <label htmlFor="check" className="toggle__label">
+          <p className="toggle__label-text">{label}</p>
           <img
             src={isChecked ? sunIcon : moonIcon}
             alt=""
-            className="toggle__icon"
+            className="toggle__label-icon"
           />
         </label>
       </div>
