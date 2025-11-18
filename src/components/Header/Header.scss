@@ -5,8 +5,7 @@
   justify-content: space-between;
   margin-bottom: 2.25rem;
   &__logo {
-    // TODO color: var(--logoColor);
-    color: white;
+    color: var(--logoColor);
     font-size: 1.625rem;
     font-weight: bold;
   }
@@ -16,8 +15,8 @@
     gap: 1rem;
     align-items: center;
     .toggle__label {
-      // TODO color: var(--toggleColor);
-      color: white;
+      color: var(--toggleColor);
+      // color: white;
       font-size: 0.8125rem;
       letter-spacing: 2px;
       font-weight: bold;

@@ -3,10 +3,30 @@
 @use "/src/assets/styles/partials/variables" as *;
 @use "/src/assets/styles/partials/mixins" as *;
 
-
-body {
-  min-height: 100vh;
-  //todo: background: var(--background);
-  background-color: $darkNavy;
-  padding: 2rem 1.5rem;
+:root {
+  --logoColor: #{$darkTeal};
+  --toggleColor: #{$blueGray};
+  --cardBg: #{$white};
+  --backgroundColor: #{$lightGray};
+  --boxShadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.2);
+  --placeholder: #{$blueGray};
+  --inputText: #{$darkTeal};
+  --bodyColor: #{$blueGray};
+  --usersname: #{$charcoal};
+  --stat: #{$charcoal}
 }
+
+[data-theme="dark"] {
+  --logoColor: white;
+  --toggleColor: white;
+  --cardBg: #{$darkBlueGray};
+  --backgroundColor: #{$darkNavy};
+  --boxShadow: none;
+  --placeholder: rgba(255, 255, 255, 0.591);
+  --inputText: white;
+  --bodyColor: white;
+  --usersname: white;
+  --stat: white;
+}
+
+

@@ -2,14 +2,15 @@
 
 .userCard {
   padding: 2rem 1.5rem;
-  // TODO: background-color: var(--userCardBG)
-  background-color: $darkBlueGray;
+  background-color: var(--cardBg);
+  box-shadow: var(--boxShadow);
   border-radius: 1rem;
   margin-top: 1rem;
+  color: var(--bodyColor);
+
 }
 
 .userInfo {
-  // border: 2px solid plum;
   display: flex;
   gap: 1.25rem;
 
@@ -25,10 +26,9 @@
     align-items: flex-start;
 
     &__name {
-      // TODO: color: var(--usersname);
-      color: white;
+      color: var(--usersname);
       font-size: 1rem;
-      font-weight: bold;
+      font-weight: 500;
       line-height: normal;
     }
 
@@ -49,32 +49,24 @@
 
     &__joinDate {
       font-size: 0.8125rem;
-      // TODO: color: var(--datecolor)
-      color: white;
     }
   }
 }
 
 .userDescription {
-  // border: 2px solid #ab274f;
   font-size: 0.8125rem;
-  // TODO: color: var(--bodycolor)
-  color: white;
   line-height: 1.5rem;
   margin-top: 2rem;
 }
 
 .userStats {
-  // border: 2px solid #b284be;
   margin-top: 1.5rem;
   padding: 1rem 0.8rem;
   display: flex;
-  //TODO: background-color: var(--statsBg)
-  background-color: $darkNavy;
+  background-color: var(--backgroundColor);
   border-radius: 0.625rem;
 
-  //TODO: color: var(--bodycolor);
-  color: white;
+  // color: var(--bodyColor);
   justify-content: space-evenly;
 
   .stat {
@@ -88,18 +80,17 @@
     &__info {
       font-size: 1rem;
       font-weight: bold;
+      color: var(--stat);
     }
   }
 }
 
 .userSocials {
-  // border: 2px solid #00b9e8;
   list-style-type: none;
   margin-top: 1.5rem;
 
   li {
     display: flex;
-    color: white;
     gap: 1.25rem;
     font-size: 0.8125rem;
 
@@ -112,7 +103,7 @@
     }
 
     a {
-      color: white;
+      color: inherit;
       text-decoration: none;
       &:hover {
         text-decoration-line: underline;

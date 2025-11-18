@@ -18,17 +18,18 @@
     padding: 1.125rem 2.8125rem;
     border-radius: 1rem;
     border: none;
-    // todo: background: var(--background); or whatever
-    background: $darkBlueGray;
-    color: white;
+    background: var(--cardBg);
+    box-shadow: var(--boxShadow);
+    // background: $darkBlueGray;
+    color: var(--inputText);
 
     &:focus {
       outline: 1.5px solid $lightBlue;
     }
 
     &::placeholder {
-      // todo: color: var(--placeholder);
-      color: rgba(255, 255, 255, 0.591);
+      color: var(--placeholder);
+      // color: rgba(255, 255, 255, 0.591);
       font-size: 0.75rem;
       font-weight: normal;
       letter-spacing: 0;

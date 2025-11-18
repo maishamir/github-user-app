@@ -7,13 +7,12 @@ import axios from "axios";
 
 const BASE = "https://api.github.com";
 
-
 function App() {
   const [user, setUser] = useState("maishamir");
   const [userData, setUserData] = useState(null);
 
   function handleSearch(userName) {
-    setUser(userName)
+    setUser(userName);
   }
 
   useEffect(() => {
@@ -31,9 +30,10 @@ function App() {
   // console.log(userData.login)
 
   return (
-    <main className="app">
+    <main className="app" data-theme="dark">
+    {/* <main className="app"> */}
       <Header />
-      <SearchBar onSearch={handleSearch}/>
+      <SearchBar onSearch={handleSearch} />
       <UserCard userInfo={userData} />
     </main>
   );
