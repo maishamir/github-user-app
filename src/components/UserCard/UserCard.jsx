@@ -24,14 +24,17 @@ function UserCard({ userInfo }) {
     <section className="userCard">
       <div className="userInfo">
         <img src={userInfo.avatar_url} alt="" />
-        <div className="user">
-          <h1 className="user__name">{userInfo.name}</h1>
-          <h3 className="user__username">
-            <a href={userInfo.html_url} target="_blank">
-              @{userInfo.login}
-            </a>
-          </h3>
-          <p className="user__joinDate">Joined {joined}</p>
+        <div className="userDeets">
+          <div className="userDeets__user">
+            <h1 className="userDeets__user-name">{userInfo.name}</h1>
+            <h3 className="userDeets__user-username">
+              <a href={userInfo.html_url} target="_blank">
+                @{userInfo.login}
+              </a>
+            </h3>
+          </div>
+            <p className="userDeets__joinDate">Joined {joined}</p>
+
         </div>
       </div>
 
