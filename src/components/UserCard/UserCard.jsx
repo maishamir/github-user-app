@@ -33,8 +33,7 @@ function UserCard({ userInfo }) {
               </a>
             </h3>
           </div>
-            <p className="userDeets__joinDate">Joined {joined}</p>
-
+          <p className="userDeets__joinDate">Joined {joined}</p>
         </div>
       </div>
 
@@ -63,7 +62,7 @@ function UserCard({ userInfo }) {
         </div>
       </div>
 
-      <ul className="userSocials">
+      {/* <ul className="userSocials">
         <li>
           <img src={locIcon} alt="" />
           <p>{userInfo.location ? userInfo.location : "Not Available"}</p>
@@ -86,7 +85,66 @@ function UserCard({ userInfo }) {
           <img src={companyIcon} alt="" />
           <p>{userInfo.company ? userInfo.company : "Not Available"}</p>
         </li>
-      </ul>
+      </ul> */}
+
+      {/* <div className="userSocials">
+        <div className="userSocials__section">
+          <div className="icons">
+            <img src={locIcon} alt="" />
+            <img src={websiteIcon} alt="" />
+          </div>
+          <div className="socialsLabel">
+            <p>{userInfo.location ? userInfo.location : "Not Available"}</p>
+            <a href={userInfo?.blog} target="_blank">
+              {userInfo.blog ? userInfo.blog : "Not Available"}
+            </a>
+          </div>
+        </div>
+        <div className="userSocials__section">
+          <div className="icons">
+            <img src={twitterIcon} alt="" />
+            <img src={companyIcon} alt="" />
+          </div>
+          <div className="socialsLabel">
+            <a href={userInfo?.twitter_username} target="_blank">
+              {userInfo.twitter_username
+                ? userInfo.twitter_username
+                : "Not Available"}
+            </a>
+            <p>{userInfo.company ? userInfo.company : "Not Available"}</p>
+          </div>
+        </div>
+      </div> */}
+
+      <div className="userSocials">
+        <div className="userSocials__section">
+          <div className="userSocials__item">
+            <img src={locIcon} alt="" />
+            <p>{userInfo.location ? userInfo.location : "Not Available"}</p>
+          </div>
+          <div className="userSocials__item">
+            <img src={websiteIcon} alt="" />
+            <a href={userInfo?.blog} target="_blank">
+              {userInfo.blog ? userInfo.blog : "Not Available"}
+            </a>
+          </div>
+        </div>
+
+        <div className="userSocials__section">
+          <div className="userSocials__item unavailable">
+            <img src={twitterIcon} alt="" />
+            <a href={userInfo?.twitter_username} target="_blank">
+              {userInfo.twitter_username
+                ? userInfo.twitter_username
+                : "Not Available"}
+            </a>
+          </div>
+          <div className="userSocials__item">
+            <img src={companyIcon} alt="" />
+            <p>{userInfo.company ? userInfo.company : "Not Available"}</p>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

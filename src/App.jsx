@@ -31,8 +31,8 @@ function App() {
   }, [user]);
 
   return (
-    <div className="appContainer">
-      <main className="app" data-theme={isDark ? "dark" : "light"}>
+    <div className="appContainer" data-theme={isDark ? "dark" : "light"}>
+      <main className="app">
         <div className="app__header-toggle">
           <Header />
           <Toggle handleChange={() => setIsDark(!isDark)} isChecked={isDark} />
