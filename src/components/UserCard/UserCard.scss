@@ -39,9 +39,17 @@
     flex-direction: column;
     align-items: flex-start;
 
+    @include desktop {
+        // border: 1px solid lavender;
+        flex-direction: row;
+        // align-items: center;
+      }
+
     &__user {
       display: flex;
       flex-direction: column;
+
+      
       &-name {
         color: var(--usersname);
         font-size: 1rem;
