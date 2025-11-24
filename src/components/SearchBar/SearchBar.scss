@@ -4,6 +4,29 @@
 .searchBar {
   position: relative;
 
+  @include desktop {
+  }
+  &-state {
+    color: #f74646;
+    font-weight: bold;
+    font-size: 0.8125rem;
+    position: absolute;
+    right: 8.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    visibility: hidden;
+
+    @include desktop {
+      &--err {
+        visibility: visible;
+      }
+
+      &--noErr {
+        visibility: hidden;
+      }
+    }
+  }
+
   &__icon {
     height: 1.25rem;
     width: 1.25rem;
@@ -27,7 +50,6 @@
     border: none;
     background: var(--cardBg);
     box-shadow: var(--boxShadow);
-    // background: $darkBlueGray;
     color: var(--inputText);
 
     @include tablet {

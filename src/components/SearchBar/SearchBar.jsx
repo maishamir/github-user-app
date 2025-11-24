@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./SearchBar.scss";
 import searchIcon from "../../assets/icons/icon-search.svg";
 
-function SearchBar({ onSearch }) {
+function SearchBar({ onSearch, userNotFound }) {
   const [username, setUsername] = useState("");
 
   function handleSubmit(e) {
@@ -25,6 +25,8 @@ function SearchBar({ onSearch }) {
           placeholder="Search GitHub username..."
           onChange={(e) => setUsername(e.target.value)}
         />
+        <span className={`searchBar-state ${userNotFound ? `searchBar-state--err` : "searchBar-state--noErr"}`}>No results</span>
+
         <button type="submit" className="searchBar__submit">
           Search
         </button>
