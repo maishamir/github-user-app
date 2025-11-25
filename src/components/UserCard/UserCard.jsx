@@ -6,7 +6,7 @@ import defaultUser from "../../assets/icons/defaultUser.png";
 import "./UserCard.scss";
 
 function UserCard({ userInfo }) {
-  if (!userInfo) return <div>Loading...</div>;
+  // if (!userInfo) return <div>Loading...</div>;
 
   const joinDate = new Date(userInfo.created_at);
   console.log(joinDate);
@@ -64,12 +64,11 @@ function UserCard({ userInfo }) {
 
       <div className="userSocials">
         <div className="userSocials__section">
-          <div className={`userSocials__item ${userInfo.location ? "" : "unavailable"}`}>
+          <div className="userSocials__item">
             <img src={locIcon} alt="" />
             <p>{userInfo.location ? userInfo.location : "Not Available"}</p>
           </div>
-
-          <div className={`userSocials__item ${userInfo.blog ? "" : "unavailable"}`}>
+          <div className="userSocials__item">
             <img src={websiteIcon} alt="" />
             <a href={userInfo?.blog} target="_blank">
               {userInfo.blog ? userInfo.blog : "Not Available"}
@@ -78,7 +77,7 @@ function UserCard({ userInfo }) {
         </div>
 
         <div className="userSocials__section">
-          <div className={`userSocials__item ${userInfo.twitter_username ? "" : "unavailable"}`}>
+          <div className="userSocials__item unavailable">
             <img src={twitterIcon} alt="" />
             <a href={userInfo?.twitter_username} target="_blank">
               {userInfo.twitter_username
@@ -86,7 +85,7 @@ function UserCard({ userInfo }) {
                 : "Not Available"}
             </a>
           </div>
-          <div className={`userSocials__item ${userInfo.company ? "" : "unavailable"}`}>
+          <div className="userSocials__item">
             <img src={companyIcon} alt="" />
             <p>{userInfo.company ? userInfo.company : "Not Available"}</p>
           </div>
