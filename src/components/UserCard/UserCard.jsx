@@ -6,7 +6,7 @@ import defaultUser from "../../assets/icons/defaultUser.png";
 import "./UserCard.scss";
 
 function UserCard({ userInfo }) {
-  // if (!userInfo) return <div>Loading...</div>;
+  if (!userInfo) return <div>Loading...</div>;
 
   const joinDate = new Date(userInfo.created_at);
   console.log(joinDate);
