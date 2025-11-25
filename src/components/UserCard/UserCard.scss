@@ -39,9 +39,18 @@
     flex-direction: column;
     align-items: flex-start;
 
+    @include desktop {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 8rem;
+
+      }
+
     &__user {
       display: flex;
       flex-direction: column;
+
+      
       &-name {
         color: var(--usersname);
         font-size: 1rem;
@@ -79,6 +88,10 @@
       @include tablet {
         font-size: 1rem;
       }
+
+      @include desktop {
+        margin-top: 0.5rem;
+      }
     }
   }
 }
@@ -99,8 +112,6 @@
   display: flex;
   background-color: var(--backgroundColor);
   border-radius: 0.625rem;
-
-  // color: var(--bodyColor);
   justify-content: space-evenly;
 
   .stat {
@@ -167,12 +178,16 @@
 
     &.unavailable {
       opacity: 0.5;
+
+      a:hover {
+        text-decoration: none;
+      }
     }
 
     a {
       color: inherit;
       text-decoration: none;
-      &:hover {
+      &:hover  {
         text-decoration-line: underline;
         text-underline-offset: 3px;
         text-decoration-style: wavy;
